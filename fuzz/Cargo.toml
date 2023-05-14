@@ -1,0 +1,27 @@
+[package]
+name = "rc-zip-fuzz"
+version = "0.1.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.rc-zip]
+# DELETE ME: Ensure path is a path relative to this Cargo.toml pointing to
+# DELETE ME: the pacakge you want to import from the repo.
+path = "../crates/rc-zip"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "unzip"
+path = "fuzz_targets/unzip.rs"
+test = false
+doc = false

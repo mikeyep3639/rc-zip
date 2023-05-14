@@ -1,0 +1,6 @@
+project: rc-zip
+target: unzip
+duration: 300
+
+cmds:
+  - cmd: /unzip
